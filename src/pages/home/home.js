@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { ProgressSpinner } from 'primereact/progressspinner';
+import { GeneralContext } from '../../contexts/generalContext.js';
 import './home.css';
-
 export default function Home() {
 
-  return (
-    <div className='home-page'>
-      <h1>Hello World</h1>
-      <ProgressSpinner 
-        style={{ width: '50px', height: '50px' }} 
-        strokeWidth="8" 
-        animationDuration=".5s" />
-    </div>
-  );
+    const { scrollToSection } = useContext(GeneralContext);
+
+    return (
+        <div className='home-page'>
+        <h1>Bienvenido a mi Portfolio</h1>
+        <button onClick={() => scrollToSection('section2')} className='transition-button'>
+            <i className='pi pi-code'  style={{ fontSize: '2em' }}></i>
+            <i className='pi pi-angle-down'  style={{ fontSize: '2em' }}></i>
+        </button>
+        </div>
+    );
 
 }
 

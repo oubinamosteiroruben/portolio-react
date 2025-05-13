@@ -1,14 +1,36 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home/home.js';
+import Experience from './pages/experience/experience.js';
+import { GeneralProvider } from './contexts/generalContext.js';
+import AboutMe from './pages/aboutMe/aboutMe.js';
+import Skills from './pages/skills/skills.js';
+import Studies from './pages/studies/studies.js';
+import { ProgressSpinner } from 'primereact/progressspinner';
 
 function App() {
+  
+
   return (
     <div className="App">
-      <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+      <GeneralProvider>
+        <div id="section1">
+          <Home />
+        </div>
+        <div id="section2">
+          <AboutMe />
+        </div>
+        <div id="section3">
+          <Skills />
+        </div>
+        <div id="section4">
+          <Experience />
+        </div>       
+        <div id="section5">
+          <Studies />
+        </div>   
+      </GeneralProvider>
     </div>
   );
 }
