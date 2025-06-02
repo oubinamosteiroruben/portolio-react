@@ -8,6 +8,7 @@ import AboutMe from './pages/aboutMe/aboutMe.js';
 import Skills from './pages/skills/skills.js';
 import Studies from './pages/studies/studies.js';
 import { ProgressSpinner } from 'primereact/progressspinner';
+import ArrowToTop from './components/ArrowToTop/ArrowToTop.js';
 
 function App() {
   
@@ -15,21 +16,23 @@ function App() {
   return (
     <div className="App">
       <GeneralProvider>
-        <div id="section1">
+        <div className="section" id="section1">
           <Home />
         </div>
-        <div id="section2">
+        <div className="section" id="section2">
           <AboutMe />
         </div>
-        <div id="section3">
+        <div className="section" id="section3">
           <Skills />
         </div>
-        <div id="section4">
+        <div className="section" id="section4">
           <Experience />
         </div>       
-        <div id="section5">
+        <div className="section" id="section5">
           <Studies />
         </div>   
+
+        <ArrowToTop />
       </GeneralProvider>
     </div>
   );
