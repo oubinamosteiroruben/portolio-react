@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  height: 100vh;
 }
 .App .transition-button {
   background-color: transparent;
@@ -12,7 +16,7 @@
 .App .transition-button i {
   position: absolute;
   font-size: 2rem;
-  color: #007bff;
+  color: var(--primary-blue);
   transform: translate(-50%, -50%) rotate(0deg);
   transition: transform 0.5s ease-in-out;
   top: 50%;
@@ -21,7 +25,8 @@
 .App .transition-button .pi-code {
   opacity: 1;
 }
-.App .transition-button .pi-angle-down, .App .transition-button .pi-angle-up {
+.App .transition-button .pi-angle-down,
+.App .transition-button .pi-angle-up {
   opacity: 0;
 }
 .App .transition-button:hover i {
@@ -30,7 +35,8 @@
 .App .transition-button:hover .pi-code {
   opacity: 0;
 }
-.App .transition-button:hover .pi-angle-down, .App .transition-button:hover .pi-angle-up {
+.App .transition-button:hover .pi-angle-down,
+.App .transition-button:hover .pi-angle-up {
   opacity: 1;
 }
 .App .section {
@@ -38,6 +44,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  scroll-snap-align: start;
 }
 .App .section > div {
   display: flex;

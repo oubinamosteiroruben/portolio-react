@@ -2,29 +2,38 @@ import React from "react";
 import './style.css';
 
 export default function ArrowToTop() {
+  const [hidden, setHidden] = React.useState(true);
 
-    const [hidden, setHidden] = React.useState(true);
+  React.useEffect(() => {
+    const appContainer = document.querySelector('.App');
 
-    React.useEffect(() => {
+    if (!appContainer) return;
+
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      if (appContainer.scrollTop > 0) {
         setHidden(false);
       } else {
         setHidden(true);
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-    }, []);
 
+    appContainer.addEventListener('scroll', handleScroll);
+    // Verificamos el estado inicial
+    handleScroll();
+
+    return () => {
+      appContainer.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    const appContainer = document.querySelector('.App');
+    if (appContainer) {
+      appContainer.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
