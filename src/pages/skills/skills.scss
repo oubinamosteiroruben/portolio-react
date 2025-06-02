@@ -1,3 +1,9 @@
 .skills-page{
     background-color: lightsalmon;
+
+    .skills-row{
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    }
 }

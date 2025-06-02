@@ -1,0 +1,45 @@
+.dinamic-list {
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: top right;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    
+    &.visible {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+    .dinamic-list-title {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        color: #0077b6;
+    }
+
+    .dinamic-list-item {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        color: #333;
+
+        .dinamic-list-item-text {
+            margin-right: 0.5rem;
+        }
+
+        .dinamic-list-item-icon {
+            font-size: 1.5rem;
+            color: #0077b6;
+            transition: color 0.3s ease;
+            margin-left: auto;
+
+            &:hover {
+                color: #005f8a;
+            }
+        }
+    }
+}
