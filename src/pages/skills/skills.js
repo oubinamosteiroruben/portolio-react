@@ -15,9 +15,6 @@ export default function Skills() {
   return (
     <div className="skills-page">
       <h1>Habilidades</h1>
-      <p>
-        Información sobre mis Habilidades.
-      </p>
       <div className="skills-row">
         <DinamicList title="Hard Skills" items={hardSkills}/>
         <DinamicList title="Soft Skills" items={softSkills}/>

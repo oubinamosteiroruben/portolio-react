@@ -32,16 +32,19 @@ export default function DinamicList({ title, items }) {
   }, []);
 
   return (
-    <ul ref={listRef} className={`dinamic-list ${isVisible ? "visible" : ""}`}>
-      {title && <h2 className="dinamic-list-title">{title}</h2>}
-      {items.map((item, index) => (
-        <li key={index} className="dinamic-list-item">
-          <span className="dinamic-list-item-text">{item.text}</span>
-          {item.icon && (
-            <i className={`pi ${item.icon} dinamic-list-item-icon`} style={{ fontSize: "1.5em" }}></i>
-          )}
-        </li>
-      ))}
-    </ul>
+    <div className="dinamic-list">
+        {title && <h2 className="dinamic-list-title">{title}</h2>}
+        <ul ref={listRef} className={`dinamic-list-body ${isVisible ? "visible" : ""}`}>
+            {items.map((item, index) => (
+                <li key={index} className="dinamic-list-item">
+                <span className="dinamic-list-item-text">{item.text}</span>
+                {item.icon && (
+                    <i className={`${item.icon} dinamic-list-item-icon`} style={{ fontSize: "1.5em" }}></i>
+                )}
+                </li>
+            ))}
+        </ul>
+    </div>
+    
   );
 }

@@ -28,7 +28,9 @@ export default function Contact() {
                     Si tienes alguna pregunta o quieres saber más sobre mi trabajo, <br/> no dudes en contactarme
                 </p>
                 <p>
-                    Siempre abierto a nuevas oportunidades y colaboraciones <br/> {":)"}
+                    Siempre abierto a nuevas oportunidades y colaboraciones 
+                    <br/> 
+                    <i class="fa-regular fa-face-smile-wink"></i>
                 </p>
             </div>
 
